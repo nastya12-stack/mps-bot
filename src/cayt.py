@@ -1,0 +1,1 @@
+print(https://informatics.ru/)
