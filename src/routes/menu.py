@@ -8,8 +8,9 @@ router = Router()
 @router.message(Command("menu"))
 async def show_menu(message: Message) -> None:
     keyboard = [
-        [InlineKeyboardButton(text="Who created you?", callback_data="about")],
+        [InlineKeyboardButton(text="What is МШП?", callback_data="about")],
         [InlineKeyboardButton(text="What is my name?", callback_data="name")],
+        [InlineKeyboardButton(text="Who created you?", callback_data="")],
     ]
 
     markup = InlineKeyboardMarkup(inline_keyboard=keyboard)

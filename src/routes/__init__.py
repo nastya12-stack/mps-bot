@@ -1,6 +1,6 @@
 from aiogram import Router
 
-from . import about, menu, name, start
+from . import start, name, question, about, menu
 
 router = Router()
 
@@ -9,4 +9,5 @@ router.include_routers(
     start.router,
     menu.router,
     name.router,
+    question.router,
 )
