@@ -10,7 +10,7 @@ async def show_menu(message: Message) -> None:
     keyboard = [
         [InlineKeyboardButton(text="What is МШП?", callback_data="about")],
         [InlineKeyboardButton(text="What is my name?", callback_data="name")],
-        [InlineKeyboardButton(text="Who created you?", callback_data="")],
+        [InlineKeyboardButton(text="Who created you?", callback_data="question")],
     ]
 
     markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
