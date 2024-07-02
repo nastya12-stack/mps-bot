@@ -20,4 +20,5 @@ async def command_about(message: Message) -> None:
 
 @router.callback_query(F.data == "about")
 async def on_callback(query: CallbackQuery) -> None:
-    await query.message.answer(get_description())
+    # await query.message.answer(get_description())
+    await query.message.edit_text(get_description())
