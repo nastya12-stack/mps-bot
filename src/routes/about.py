@@ -2,11 +2,14 @@ from aiogram import F, Router
 from aiogram.filters import Command
 from aiogram.types import CallbackQuery, Message
 
+from src import assets
+
 router = Router()
 
 
 def get_description() -> str:
-    with open("assets/description.txt", encoding="utf-8") as text_file:
+    filepath = assets.path_to("description.txt")
+    with open(filepath, encoding="utf-8") as text_file:
         return text_file.read()
 
 
