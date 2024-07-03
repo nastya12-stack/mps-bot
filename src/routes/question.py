@@ -7,10 +7,10 @@ router = Router()
 
 @router.message(Command("question"))
 async def command_about(message: Message) -> None:
-    await message.answer("This bot was created by @agatyny and @Anastatyahohlova. If there are some problems write @agatyny")
+    await message.answer("Этот бот сделали @agatyny и @Anastatyahohlova. Если есть проблемы пишите @agatyny.")
 
 
 @router.callback_query(F.data == "question")
 async def on_callback(query: CallbackQuery) -> None:
     await query.message.answer(
-        "This bot was created by @agatyny and @Anastatyahohlova. If there are some problems write @agatyny")
+        "Этот бот сделали @agatyny и @Anastatyahohlova. Если есть проблемы пишите @agatyny.")
