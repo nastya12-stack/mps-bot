@@ -1,7 +1,6 @@
 from aiogram import F, Router
 from aiogram.filters import Command
-from aiogram.types import CallbackQuery, Message
-
+from aiogram.types import CallbackQuery, Message, InlineKeyboardButton, InlineKeyboardMarkup
 from src import assets
 
 router = Router()
@@ -20,5 +19,7 @@ async def command_about(message: Message) -> None:
 
 @router.callback_query(F.data == "about")
 async def on_callback(query: CallbackQuery) -> None:
-    # await query.message.answer(get_description())
-    await query.message.edit_text(get_description())
+    markup = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="Back", callback_data="menu")],
+    ])
+    await query.message.edit_text(get_description(), reply_markup=markup)
