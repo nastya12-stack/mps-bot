@@ -20,6 +20,8 @@ async def command_about(message: Message) -> None:
 @router.callback_query(F.data == "about")
 async def on_callback(query: CallbackQuery) -> None:
     markup = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="Back", callback_data="menu")],
+        [InlineKeyboardButton(text="Назад", callback_data="menu")],
+        [InlineKeyboardButton(text="Оценки", callback_data="ochenki")],
     ])
     await query.message.edit_text(get_description(), reply_markup=markup)
+

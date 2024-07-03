@@ -8,7 +8,7 @@ router = Router()
 
 
 def get_description() -> str:
-    print("Hello, my friends!")
+    return "Hello, my friends!"
 
 
 @router.message(Command("ochenki"))
