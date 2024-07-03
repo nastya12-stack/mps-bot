@@ -8,10 +8,10 @@ router = Router()
 @router.message(Command("name"))
 async def command_about(message: Message) -> None:
     name = message.from_user.full_name
-    await message.answer(f"Your name is {name}.")
+    await message.answer(f"Тебя зовут {name}.")
 
 
 @router.callback_query(F.data == "name")
 async def on_callback(query: CallbackQuery) -> None:
     name = query.from_user.full_name
-    await query.message.answer(f"Your name is {name}.")
+    await query.message.answer(f"Тебя зовут {name}.")
