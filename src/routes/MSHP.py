@@ -16,17 +16,17 @@ router = Router()
 
 
 def get_description() -> str:
-    filepath = assets.path_to("olimpiada")
+    filepath = assets.path_to("MSHP")
     with open(filepath, "r", encoding="utf-8") as my_file:
         return my_file.read()
 
 
-@router.message(Command("olimpiada"))
-async def command_olimpiada(message: Message) -> None:
+@router.message(Command("MSHP"))
+async def command_MSHP(message: Message) -> None:
     await message.answer(get_description())
 
 
-@router.callback_query(F.data == "olimpiada")
+@router.callback_query(F.data == "MSHP")
 async def on_callback(query: CallbackQuery) -> None:
     markup = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="Back", callback_data="about")],
