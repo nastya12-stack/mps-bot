@@ -18,7 +18,6 @@ async def command_about(message: Message) -> None:
 @router.callback_query(F.data == "about")
 async def on_callback(query: CallbackQuery) -> None:
     markup = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="Назад", callback_data="menu")],
         [InlineKeyboardButton(text="Немного о школе", callback_data="MSHP")],
         [InlineKeyboardButton(text="О уроках ", callback_data="yrok")],
         [InlineKeyboardButton(text="О учителях", callback_data="teacher")],
@@ -27,6 +26,8 @@ async def on_callback(query: CallbackQuery) -> None:
         [InlineKeyboardButton(text="О удобствах", callback_data="ydobctva")],
         [InlineKeyboardButton(text="О минусах", callback_data="minyc")],
         [InlineKeyboardButton(text="Вывод", callback_data="vevod")],
+        [InlineKeyboardButton(text="Если хотите узнать больше о МШП жми сюда", callback_data="bolishe")],
+        [InlineKeyboardButton(text="Назад", callback_data="menu")],
     ])
     await query.message.edit_text(get_description(), reply_markup=markup)
 

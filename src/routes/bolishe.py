@@ -16,20 +16,19 @@ router = Router()
 
 
 def get_description() -> str:
-    filepath = assets.path_to("ydobctva")
+    filepath = assets.path_to("bolishe")
     with open(filepath, "r", encoding="utf-8") as my_file:
         return my_file.read()
 
 
-@router.message(Command("ydobctva"))
-async def command_ydobctva(message: Message) -> None:
+@router.message(Command("bolishe"))
+async def command_bolishe(message: Message) -> None:
     await message.answer(get_description())
 
 
-@router.callback_query(F.data == "ydobctva")
+@router.callback_query(F.data == "bolishe")
 async def on_callback(query: CallbackQuery) -> None:
     markup = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="Назад", callback_data="about")],
+        [InlineKeyboardButton(text="Back", callback_data="about")],
     ])
     await query.message.edit_text(get_description(), reply_markup=markup)
-

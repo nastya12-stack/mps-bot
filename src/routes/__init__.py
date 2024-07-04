@@ -1,6 +1,6 @@
 from aiogram import Router
 
-from . import start, name, question, about, menu, ochenki, minyc, MSHP, olimpiada, teacher, vevod, ydobstva, yrok
+from . import start, name, question, about, menu, ochenki, minyc, MSHP, olimpiada, teacher, vevod, ydobstva, yrok, bolishe
 
 router = Router()
 
@@ -18,4 +18,5 @@ router.include_routers(
     vevod.router,
     ydobstva.router,
     yrok.router,
+    bolishe.router,
 )

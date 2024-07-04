@@ -23,6 +23,6 @@ async def command_yrok(message: Message) -> None:
 @router.callback_query(F.data == "yrok")
 async def on_callback(query: CallbackQuery) -> None:
     markup = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="Back", callback_data="about")],
+        [InlineKeyboardButton(text="Назад", callback_data="about")],
     ])
     await query.message.edit_text(get_description(), reply_markup=markup)
